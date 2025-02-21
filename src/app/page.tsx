@@ -7,12 +7,11 @@ import dynamic from 'next/dynamic';
 const LineChart = dynamic(() => import('@/components/LineChart'), { ssr: false });
 const BarChart = dynamic(() => import('@/components/BarChart'), { ssr: false });
 const DoughnutChart = dynamic(() => import('@/components/DoughnutChart'), { ssr: false });
-// Añade estas importaciones junto a las existentes
 const ScatterChart = dynamic(() => import('@/components/ScatterChart'), { ssr: false });
 const BoxPlotChart = dynamic(() => import('@/components/BoxPlotChart'), { ssr: false });
 const ParetoChart = dynamic(() => import('@/components/ParetoChart'), { ssr: false });
 const PolarChart = dynamic(() => import('@/components/PolarChart'), { ssr: false });
-const RadarChart = dynamic(() => import('@/components/RadarChart'), { ssr: false });
+const SystemMetricsBarChart = dynamic(() => import('@/components/SystemMetricsBarChart'), { ssr: false });
 const BubbleChart = dynamic(() => import('@/components/BubbleChart'), { ssr: false });
 import ChartPanel from '@/components/ChartPanel';
 import MainChartPanel from '@/components/MainChartPanel';
@@ -218,15 +217,23 @@ export default function Home() {
           maintainAspectRatio: false,
           responsive: true,
           layout: {
-            padding: panelType === 'main' ? 40 : 20
+            padding: {
+              top: 20,
+              right: 100,  // Aumentado para dar más espacio a las leyendas
+              bottom: 20,
+              left: 20
+            }
           },
           plugins: {
             legend: {
               position: 'right',
+              align: 'center',
               labels: {
+                padding: 20,  // Espacio entre las etiquetas
                 font: {
                   size: panelType === 'main' ? 14 : 12
-                }
+                },
+                boxWidth: 15  // Ancho del cuadro de color
               }
             }
           }
@@ -235,28 +242,8 @@ export default function Home() {
     },
     {
       title: "Métricas del Sistema",
-      getComponent: (panelType: 'main' | 'small' | 'wide') => createChartComponent(RadarChart, {
-        data: [stats.activeUsers, stats.totalSessions, 85, 65, 45, 90],
-        label: "Rendimiento",
-        color: "#8b5cf6",
-        options: {
-          maintainAspectRatio: false,
-          responsive: true,
-          layout: {
-            padding: panelType === 'main' ? 40 : 20
-          },
-          scales: {
-            r: {
-              beginAtZero: true,
-              ticks: {
-                stepSize: 20,
-                font: {
-                  size: panelType === 'main' ? 14 : 12
-                }
-              }
-            }
-          }
-        }
+      getComponent: (panelType: 'main' | 'small' | 'wide') => createChartComponent(SystemMetricsBarChart, {
+        data: stats.systemMetrics
       }, panelType)
     },
     {
