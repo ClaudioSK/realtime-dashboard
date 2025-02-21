@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Panel de Control en Tiempo Real
 
-## Getting Started
+Un panel de control que muestra diversas métricas y estadísticas usando gráficos interactivos.
 
-First, run the development server:
+## Tecnologías Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Frontend
+- **Next.js 15** - Framework de React para producción
+- **React 19** - Biblioteca de JavaScript para construir interfaces de usuario
+- **Chart.js & React-ChartJS-2** - Para crear gráficos interactivos
+- **TailwindCSS** - Para estilos y diseño responsivo
+- **Socket.IO Client** - Para comunicación cliente-servidor en tiempo real
+- **TypeScript** - Para seguridad de tipos y mejor experiencia de desarrollo
+
+### Backend
+- **Express** - Framework web para Node.js
+- **Socket.IO** - Para comunicación bidireccional en tiempo real
+- **TypeScript** - Para desarrollo del servidor con tipos seguros
+
+## Estructura del Proyecto
 ```
+realtime-dashboard/
+├── src/
+│   ├── app/                    # Directorio de Next.js
+│   │   ├── page.tsx           # Página principal del panel
+│   │   ├── layout.tsx         # Diseño raíz
+│   │   └── globals.css        # Estilos globales
+│   ├── components/            # Componentes React
+│   │   ├── BarChart.tsx      # Componente de gráfico de barras
+│   │   ├── LineChart.tsx     # Componente de gráfico de líneas
+│   │   ├── DoughnutChart.tsx # Componente de gráfico circular
+│   │   └── ...               # Otros componentes de gráficos
+│   └── types/                 # Definiciones de tipos TypeScript
+├── server.ts                  # Servidor Socket.IO
+├── tailwind.config.ts        # Configuración de Tailwind CSS
+└── package.json              # Dependencias del proyecto
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```
+## Características
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Actualizaciones de datos en tiempo real usando Socket.IO
+- Múltiples tipos de gráficos:
+  - Gráficos de líneas para análisis de tendencias
+  - Gráficos de barras para datos comparativos
+  - Gráficos circulares para distribución
+  - Gráficos de dispersión para correlaciones
+  - Diagramas de caja para análisis estadístico
+  - Gráficos de Pareto para análisis de importancia
+  - Gráficos polares para datos cíclicos
+  - Gráficos de radar para datos multivariables
+  - Gráficos de burbujas para datos tridimensionales
+- Diseño responsivo que funciona en escritorio y móvil
+- Soporte para modo oscuro/claro
+- Controles interactivos de gráficos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Ejecutar el Proyecto
 
-## Learn More
+1. Iniciar el servidor Socket.IO:
 
-To learn more about Next.js, take a look at the following resources:
+npm run server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. En otra terminal, iniciar el servidor de desarrollo de Next.js:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+npm run dev
 
-## Deploy on Vercel
+El panel estará disponible en http://localhost:3000
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Esta documentación proporciona una visión clara de la pila tecnológica, estructura y características de tu proyecto. ¡Puedes modificarla o expandirla según tus necesidades!
