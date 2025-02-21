@@ -1,22 +1,26 @@
-Panel de Control en Tiempo Real
+# **Panel de Control en Tiempo Real**
+
 Un panel de control interactivo que muestra métricas y estadísticas en tiempo real mediante gráficos dinámicos.
 
-Tecnologías Utilizadas
-Frontend
-Next.js 15 – Framework de React para aplicaciones de producción
-React 19 – Biblioteca de JavaScript para construir interfaces de usuario
-Chart.js & React-ChartJS-2 – Para crear gráficos interactivos
-TailwindCSS – Para estilos y diseño responsivo
-Socket.IO Client – Para comunicación cliente-servidor en tiempo real
-TypeScript – Para tipado estático y mejor experiencia de desarrollo
-Backend
-Express – Framework web ligero para Node.js
-Socket.IO – Para comunicación bidireccional en tiempo real
-TypeScript – Para mejorar seguridad y mantenibilidad del código
-Estructura del Proyecto
-python
-Copiar
-Editar
+## **🛠 Tecnologías Utilizadas**
+
+### **Frontend**  
+- 🚀 **Next.js 15** – Framework de React para aplicaciones de producción  
+- ⚛️ **React 19** – Biblioteca de JavaScript para construir interfaces de usuario  
+- 📊 **Chart.js & React-ChartJS-2** – Para crear gráficos interactivos  
+- 🎨 **TailwindCSS** – Para estilos y diseño responsivo  
+- 🔌 **Socket.IO Client** – Para comunicación cliente-servidor en tiempo real  
+- 🏢 **TypeScript** – Para tipado estático y mejor experiencia de desarrollo  
+
+### **Backend**  
+- 🌎 **Express** – Framework web ligero para Node.js  
+- 🔄 **Socket.IO** – Para comunicación bidireccional en tiempo real  
+- 🔒 **TypeScript** – Para mejorar seguridad y mantenibilidad del código  
+
+---
+
+## **📂 Estructura del Proyecto**  
+```
 realtime-dashboard/
 ├── src/
 │   ├── app/                    # Aplicación Next.js
@@ -32,46 +36,54 @@ realtime-dashboard/
 ├── server.ts                   # Servidor de Socket.IO con Express
 ├── tailwind.config.ts           # Configuración de Tailwind CSS
 └── package.json                 # Dependencias del proyecto
-Características Principales
-✅ Actualización de datos en tiempo real usando Socket.IO
-✅ Diversidad de gráficos para diferentes tipos de datos:
+```
 
-📈 Líneas – Análisis de tendencias
-📊 Barras – Comparaciones
-🥧 Circulares – Distribución
-⚫ Dispersión – Correlaciones
-📦 Diagramas de caja – Análisis estadístico
-🔵 Burbujas – Datos tridimensionales
-🌐 Polares – Datos cíclicos
-🎯 Radar – Datos multivariables
-📉 Pareto – Análisis de importancia
-✅ Interfaz responsiva, compatible con escritorio y móvil
-✅ Modo oscuro/claro
-✅ Controles interactivos para explorar los gráficos
-Instalación y Ejecución
-Clonar el repositorio
+---
 
-bash
-Copiar
-Editar
+## **✨ Características Principales**  
+
+✅ **Actualización de datos en tiempo real** usando **Socket.IO**  
+✅ **Diversidad de gráficos** para diferentes tipos de datos:  
+   - 📈 **Líneas** – Análisis de tendencias  
+   - 📊 **Barras** – Comparaciones  
+   - 🥧 **Circulares** – Distribución  
+   - ⚫ **Dispersión** – Correlaciones  
+   - 📦 **Diagramas de caja** – Análisis estadístico  
+   - 🔵 **Burbujas** – Datos tridimensionales  
+   - 🌐 **Polares** – Datos cíclicos  
+   - 🎯 **Radar** – Datos multivariables  
+   - 📉 **Pareto** – Análisis de importancia  
+
+✅ **Interfaz responsiva**, compatible con escritorio y móvil  
+✅ **Modo oscuro/claro**  
+✅ **Controles interactivos** para explorar los gráficos  
+
+---
+
+## **🚀 Instalación y Ejecución**  
+
+### **1️⃣ Clonar el repositorio**  
+```bash
 git clone https://github.com/tu_usuario/realtime-dashboard.git
 cd realtime-dashboard
-Instalar dependencias
+```
 
-bash
-Copiar
-Editar
+### **2️⃣ Instalar dependencias**  
+```bash
 npm install
-Iniciar el servidor de Socket.IO
+```
 
-bash
-Copiar
-Editar
+### **3️⃣ Iniciar el servidor de Socket.IO**  
+```bash
 npm run server
-En otra terminal, iniciar el servidor de desarrollo de Next.js
+```
 
-bash
-Copiar
-Editar
+### **4️⃣ En otra terminal, iniciar el servidor de desarrollo de Next.js**  
+```bash
 npm run dev
-📌 El panel estará disponible en: http://localhost:3000
+```
+
+📌 **El panel estará disponible en:** [http://localhost:3000](http://localhost:3000)  
+
+---
+
